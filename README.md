@@ -89,6 +89,8 @@ This work builds heavily on the [`styled-system`](https://github.com/jxnblk/styl
 
 The reason for writing it was to standardize themes such as `rebass` for ease of importing and exporting into third party authoring tools such as lab, but providing an open source alternative, and to support TypeScript or Flow (purely for static type authoring experience).  It replaces the need for packages such as `dxs` as `lab-cli` as while both worked well, they had some limitations / quirks in our use case and did not support theme examples fully
 
+The intent is to be round-trip lossless with tools such as compositor lab, but actually with a good IDE with intellisense such as vs code, and the blazing fast doc generator included, you may find you dont need such tools.
+
 ## License and credits
 
 Apache 2.0

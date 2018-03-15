@@ -12,6 +12,10 @@
   "bin": {
     "iopa-styled": "./bin/iopa-styled.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iopa-io/iopa-styled.git"
+  },
   "dependencies": {
     "react": "^16.2.0",
     "styled-components": "3.2.0",

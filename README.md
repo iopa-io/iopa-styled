@@ -37,7 +37,7 @@ npm run theme:dist
 npm run theme:export
 ```
 
-Export files are in `packages/theme-rebass-ts/src/lib` folder (copy `styles.json` as `lab.json`)
+Export files are in [`packages/theme-rebass-ts/src/lib`](https://github.com/iopa-io/iopa-styled/blob/master/packages/theme-rebass-ts/src/lib/styles.json) folder (copy `styles.json` as `lab.json`)
 
 ### Import compositor lab.json file to `theme-rebass-ts`
 

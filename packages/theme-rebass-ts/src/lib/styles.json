@@ -1,0 +1,1329 @@
+{
+  "name": "rebass-json",
+  "version": "2.0.0-0",
+  "library": "styled-components",
+  "librarytype": "iopa-compositor",
+  "libraryversion": "1.0.0",
+  "components": [
+    {
+      "name": "Arrow",
+      "description": "An arrow Component",
+      "type": "div",
+      "props": {
+        "direction": "down",
+        "k": 5
+      },
+      "style": {
+        "display": "inline-block",
+        "width": 0,
+        "height": 0,
+        "verticalAlign": "middle",
+        "borderRight": ".3125em solid transparent",
+        "borderLeft": ".3125em solid transparent",
+        "borderTop": "${props.direction === 'down' ? '.4375em solid'  : null}",
+        "borderBottom": "${props.direction === 'up' ?  '.4375em solid' : null}"
+      },
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Arrow direction='down' />"
+      ]
+    },
+    {
+      "name": "Avatar",
+      "description": "An avatar component",
+      "type": "img",
+      "props": {
+        "size": 48,
+        "borderRadius": "99999px"
+      },
+      "style": {
+        "display": "inline-block"
+      },
+      "system": [
+        "space",
+        "color",
+        "size"
+      ],
+      "examples": [
+        "<Avatar\n  size={64}\n  src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'\n/>"
+      ]
+    },
+    {
+      "name": "BackgroundImage",
+      "description": "A backgroundimage component",
+      "type": "div",
+      "props": {
+        "width": 1,
+        "ratio": 0.75,
+        "backgroundSize": "cover",
+        "backgroundPosition": "center"
+      },
+      "style": {
+        "backgroundImage": "url(${props.src})"
+      },
+      "system": [
+        "ratio",
+        "backgroundSize",
+        "backgroundPosition",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<BackgroundImage\n  ratio={1/2}\n  src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'\n/>"
+      ]
+    },
+    {
+      "name": "Badge",
+      "description": "A badge component",
+      "type": "div",
+      "props": {
+        "fontSize": 0,
+        "px": 2,
+        "py": 1,
+        "mx": 1,
+        "color": "white",
+        "bg": "blue",
+        "fontWeight": "bold",
+        "borderRadius": 2
+      },
+      "style": {
+        "WebkitFontSmoothing": "antialiased",
+        "display": "inline-block",
+        "verticalAlign": "middle"
+      },
+      "system": [],
+      "examples": [
+        "<Heading>\n  Hello\n  <Badge>\n    Beep\n  </Badge>\n</Heading>"
+      ]
+    },
+    {
+      "name": "Banner",
+      "description": "A banner component",
+      "type": "Flex",
+      "props": {
+        "p": [
+          3,
+          4
+        ],
+        "flexDirection": "column",
+        "align": "center",
+        "justify": "center",
+        "backgroundSize": "cover",
+        "backgroundPosition": "center",
+        "color": "white",
+        "bg": "dark"
+      },
+      "style": {},
+      "system": [
+        "minHeight",
+        "backgroundSize",
+        "backgroundPosition",
+        "backgroundImage"
+      ],
+      "examples": [
+        "<Banner\n  color='white'\n  bg='gray8'\n  backgroundImage='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'>\n  <Heading\n    f={[ 4, 5, 6, 7 ]}>\n    Hello\n  </Heading>\n</Banner>"
+      ]
+    },
+    {
+      "name": "BlockLink",
+      "description": "A blocklink component",
+      "type": "a",
+      "props": {
+        "color": "inherit"
+      },
+      "style": {
+        "display": "block",
+        "textDecoration": "none"
+      },
+      "system": [
+        "space",
+        "width"
+      ],
+      "examples": [
+        "<BlockLink\n  href='#!'\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Blockquote",
+      "description": "A blockquote component",
+      "type": "Text",
+      "props": {
+        "is": "blockquote",
+        "fontSize": 3,
+        "m": 0
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Blockquote>\n  “The simplest scale is a single note, and sticking with a single note draws more attention to other parameters, such as rhythm and inflection.”\n</Blockquote>"
+      ]
+    },
+    {
+      "name": "Border",
+      "description": "A border component",
+      "type": "div",
+      "props": {
+        "border": 1,
+        "borderColor": "gray"
+      },
+      "style": {},
+      "system": [
+        "space",
+        "width",
+        "color"
+      ],
+      "examples": [
+        "<Border\n  py={2}\n  borderTop=\"5px solid\"\n  borderBottom=\"5px solid\">\n  Hello\n</Border>"
+      ]
+    },
+    {
+      "name": "Button",
+      "description": "A button component",
+      "type": "button",
+      "props": {
+        "fontSize": 1,
+        "fontWeight": "bold",
+        "lineHeight": 1.1428571428571428,
+        "m": 0,
+        "px": 3,
+        "py": 2,
+        "color": "white",
+        "bg": "blue",
+        "borderRadius": 2,
+        "border": 0
+      },
+      "style": {
+        "fontFamily": "inherit",
+        "WebkitFontSmoothing": "antialiased",
+        "display": "inline-block",
+        "verticalAlign": "middle",
+        "textAlign": "center",
+        "textDecoration": "none",
+        "appearance": "none",
+        "&:hover": {
+          "boxShadow": "inset 0 0 0 999px ${props.theme.colors.darken[0]}"
+        },
+        "&:focus": {
+          "outline": 0,
+          "boxShadow": "0 0 0 2px ${props.theme.colors.blue}"
+        },
+        "&:active": {
+          "backgroundColor": "${props.theme.colors.blue[6]}",
+          "boxShadow": "inset 0 0 8px ${props.theme.colors.darken[1]}"
+        },
+        "&:disabled": {
+          "opacity": 0.25
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Button\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "ButtonCircle",
+      "description": "A buttoncircle component",
+      "type": "Button",
+      "props": {
+        "px": 3,
+        "borderRadius": 99999
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<ButtonCircle\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "ButtonOutline",
+      "description": "A buttonoutline component",
+      "type": "Button",
+      "props": {
+        "color": "blue",
+        "bg": "transparent"
+      },
+      "style": {
+        "boxShadow": "inset 0 0 0 2px",
+        "&:hover": {
+          "color": "white",
+          "backgroundColor": "${props.theme.colors.blue}"
+        },
+        "&:focus": {
+          "boxShadow": "inset 0 0 0 2px, 0 0 0 2px"
+        },
+        "&:active": {
+          "color": "white",
+          "backgroundColor": "${props.theme.colors.blue}",
+          "boxShadow": "inset 0 0 0 2px ${props.theme.colors[props.color]}, inset 0 0 8px ${props.theme.colors.darken[1]}"
+        }
+      },
+      "system": [],
+      "examples": [
+        "<ButtonOutline\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "ButtonTransparent",
+      "description": "A buttontransparent component",
+      "type": "Button",
+      "props": {
+        "color": "inherit",
+        "bg": "transparent"
+      },
+      "style": {
+        "&:hover": {
+          "color": "${props.theme.colors[props.color]}",
+          "backgroundColor": "transparent"
+        },
+        "&:focus": {
+          "boxShadow": "inset 0 0 0 2px, 0 0 0 2px"
+        },
+        "&:active": {
+          "backgroundColor": "transparent",
+          "boxShadow": "inset 0 0 0 2px, inset 0 0 8px ${props.theme.colors.darken[1]}"
+        }
+      },
+      "system": [],
+      "examples": [
+        "<ButtonTransparent>\n  Hello\n</ButtonTransparent>"
+      ]
+    },
+    {
+      "name": "Caps",
+      "description": "A caps component",
+      "type": "Text",
+      "props": {
+        "fontSize": 0,
+        "letterSpacing": "0.2em"
+      },
+      "style": {
+        "textTransform": "uppercase"
+      },
+      "system": [
+        "letterSpacing"
+      ],
+      "examples": [
+        "<Caps/>"
+      ]
+    },
+    {
+      "name": "Card",
+      "description": "A card component",
+      "type": "div",
+      "props": {
+        "p": 2,
+        "bg": "white",
+        "borderRadius": 2,
+        "boxShadow": 2
+      },
+      "style": {
+        "overflow": "hidden"
+      },
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Card width={256}>\n  <BackgroundImage\n    ratio={1}\n    src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'\n  />\n  <Subhead p={2}>\n    Hello\n  </Subhead>\n</Card>"
+      ]
+    },
+    {
+      "name": "Carousel",
+      "description": "A carousel component",
+      "type": "Flex",
+      "props": {
+        "width": 1
+      },
+      "style": {
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "& > div": {
+          "flex": "none",
+          "width": "100%"
+        },
+        "& > div:first-child": {
+          "marginLeft": "${(props.index * -100)}%",
+          "transitionProperty": "margin",
+          "transitionDuration": ".2s",
+          "transitionTimingFunction": "ease-out"
+        }
+      },
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Carousel\n  index={props.checked ? 1 : 0}>\n  <Box bg='blue'>\n    <Flex\n      p={6}\n      justify='center'\n      align='center'>\n      <Heading>Hello</Heading>\n    </Flex>\n  </Box>\n  <Box bg='gray'>\n    <Flex\n      p={6}\n      justify='center'\n      align='center'>\n      <Heading>Rebass</Heading>\n    </Flex>\n  </Box>\n</Carousel>"
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "description": "A checkbox component",
+      "type": "input",
+      "props": {
+        "type": "checkbox",
+        "m": 0,
+        "mr": 2
+      },
+      "style": {},
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Label>\n  <Checkbox defaultChecked />\n  Hello\n</Label>"
+      ]
+    },
+    {
+      "name": "Circle",
+      "description": "A circle component",
+      "type": "Badge",
+      "props": {
+        "size": 24,
+        "align": "center",
+        "borderRadius": "99999px"
+      },
+      "style": {},
+      "system": [
+        "textAlign",
+        "size"
+      ],
+      "examples": [
+        "<Circle>\n  A\n</Circle>"
+      ]
+    },
+    {
+      "name": "Close",
+      "description": "A close component",
+      "type": "ButtonTransparent",
+      "props": {
+        "p": 0,
+        "fontSize": 3,
+        "lineHeight": 1,
+        "children": "×"
+      },
+      "style": {
+        "width": "24px",
+        "height": "24px"
+      },
+      "system": [],
+      "examples": [
+        "<Close />"
+      ]
+    },
+    {
+      "name": "Code",
+      "description": "A code component",
+      "type": "code",
+      "props": {
+        "fontSize": 1,
+        "fontFamily": "mono"
+      },
+      "style": {},
+      "system": [
+        "fontFamily",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Code\n  children='<Hello />'\n/>"
+      ]
+    },
+    {
+      "name": "Column",
+      "description": "A column component",
+      "type": "Box",
+      "props": {
+        "px": 3,
+        "mb": 4,
+        "flex": "1 1 auto"
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Row>\n  <Column>Column</Column>\n  <Column>Column</Column>\n  <Column>Column</Column>\n</Row>"
+      ]
+    },
+    {
+      "name": "Container",
+      "description": "A container component",
+      "type": "Box",
+      "props": {
+        "px": 3,
+        "mx": "auto",
+        "maxWidth": 1024
+      },
+      "style": {},
+      "system": [
+        "maxWidth"
+      ],
+      "examples": [
+        "<Container>\n  Hello\n</Container>"
+      ]
+    },
+    {
+      "name": "Divider",
+      "description": "A divider component",
+      "type": "hr",
+      "props": {
+        "mx": 0,
+        "my": 3,
+        "border": 0,
+        "borderBottom": 1,
+        "borderColor": "gray"
+      },
+      "style": {},
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Divider\n  w={1}\n  color='blue'\n/>"
+      ]
+    },
+    {
+      "name": "Dot",
+      "description": "A dot component",
+      "type": "button",
+      "props": {
+        "m": 0,
+        "p": 0,
+        "size": 16,
+        "bg": "darken.1",
+        "borderRadius": 99999,
+        "border": 4,
+        "borderColor": "transparent",
+        "focus": {
+          "backgroundColor": "blue"
+        },
+        "hover": {
+          "backgroundColor": "blue"
+        },
+        "disabledStyle": {
+          "opacity": 0.25
+        }
+      },
+      "style": {
+        "appearance": "none",
+        "backgroundClip": "padding-box"
+      },
+      "system": [
+        "size",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Flex>\n  <Dot bg='black' />\n  <Dot />\n  <Dot />\n</Flex>"
+      ]
+    },
+    {
+      "name": "Drawer",
+      "description": "A drawer component",
+      "type": "div",
+      "props": {
+        "color": "white",
+        "bg": "dark",
+        "open": false,
+        "size": 320,
+        "position": "left"
+      },
+      "style": {
+        "position": "fixed",
+        "overflowX": "hidden",
+        "overflowY": "auto",
+        "transitionProperty": "transform",
+        "transitionDuration": ".2s",
+        "transitionTimingFunction": "ease-out",
+        "transform": "${props.open ? null : { left: 'translateX(-100%)', right: 'translateX(100%)', top: 'translateY(-100%)', bottom: 'translateY(100%)'}[props.position]}",
+        "top": "${/^(top|left|right)$/.test(props.position) ? 0 : null}",
+        "bottom": "${/^(bottom|left|right)$/.test(props.position) ? 0 : null}",
+        "left": "${/^(left|top|bottom)$/.test(props.position) ? 0 : null}",
+        "right": "${/^(right|top|bottom)$/.test(props.position) ? 0 : null}",
+        "width": "${/^(left|right)$/.test(props.position) ? props.size + 'px' : null }",
+        "height": "${/^(left|right)$/.test(props.position) ? null : props.size + 'px' }"
+      },
+      "system": [
+        "size",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<div>\n  <Button\n    onClick={e => props.toggle()}\n    children='Toggle Drawer'\n  />\n  {props.flag && (\n    <Position\n      position=\"fixed\"\n      top={0}\n      right={0}\n      bottom={0}\n      left={0}\n      onClick={e => props.toggle()}\n    />\n  )}\n  <Drawer\n    open={props.flag}\n    position='right'\n    p={3}\n    color='white'\n    bg='dark'>\n    <Heading>Hello</Heading>\n  </Drawer>\n</div>"
+      ]
+    },
+    {
+      "name": "Embed",
+      "description": "An embed component",
+      "type": "div",
+      "props": {
+        "ratio": 0.5625
+      },
+      "style": {
+        "position": "relative",
+        "overflow": "hidden",
+        "& > iframe": {
+          "position": "absolute",
+          "width": "100%",
+          "height": "100%",
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "border": 0
+        }
+      },
+      "system": [
+        "ratio",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Embed>\n  <iframe\n    width=\"560\"\n    height=\"315\"\n    src=\"https://www.youtube.com/embed/KQ6zr6kCPj8?ecver=1\"\n    frameBorder=\"0\"\n    allowFullScreen\n  />\n</Embed>\n"
+      ]
+    },
+    {
+      "name": "Group",
+      "description": "A group component",
+      "type": "Flex",
+      "props": {},
+      "style": {
+        "& > *": {
+          "borderRadius": 0
+        },
+        "& > *:first-child": {
+          "borderRadius": "${props.theme.radii[2] + 'px'} 0 0 ${props.theme.radii[2] + 'px'}"
+        },
+        "& > *:last-child": {
+          "borderRadius": "0 ${props.theme.radii[2] + 'px'} ${props.theme.radii[2] + 'px'} 0"
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Group>\n  <Button children='Beep' />\n  <ButtonOutline children='Boop' />\n  <ButtonOutline children='Bop' />\n</Group>"
+      ]
+    },
+    {
+      "name": "Heading",
+      "description": "A heading component",
+      "type": "h2",
+      "props": {
+        "fontSize": 5,
+        "fontWeight": "bold",
+        "lineHeight": 1.25,
+        "m": 0
+      },
+      "style": {},
+      "system": [
+        "color",
+        "textAlign"
+      ],
+      "examples": [
+        "<Heading\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Image",
+      "description": "An image component",
+      "type": "img",
+      "props": {},
+      "style": {
+        "display": "block",
+        "maxWidth": "100%",
+        "height": "auto"
+      },
+      "system": [
+        "space",
+        "width",
+        "color"
+      ],
+      "examples": [
+        "<Image\n  src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'\n/>"
+      ]
+    },
+    {
+      "name": "Input",
+      "description": "An input component",
+      "type": "input",
+      "props": {
+        "type": "text",
+        "fontSize": "inherit",
+        "lineHeight": "inherit",
+        "px": 1,
+        "py": 2,
+        "m": 0,
+        "width": 1,
+        "border": 0,
+        "borderColor": "gray",
+        "boxShadow": 1,
+        "borderRadius": 2,
+        "color": "inherit",
+        "bg": "transparent"
+      },
+      "style": {
+        "fontFamily": "inherit",
+        "display": "inline-block",
+        "verticalAlign": "middle",
+        "border": 0,
+        "appearance": "none",
+        "&:focus": {
+          "outline": "none",
+          "boxShadow": "inset 0 0 0 1px ${props.theme.colors.blue}"
+        },
+        "&:disabled": {
+          "opacity": 0.25
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Input\n  defaultValue='Hello'\n  placeholder='Input'\n/>"
+      ]
+    },
+    {
+      "name": "Label",
+      "description": "A label component",
+      "type": "label",
+      "props": {
+        "fontSize": 1,
+        "mb": 1,
+        "align": "center"
+      },
+      "style": {
+        "display": "flex"
+      },
+      "system": [
+        "alignItems",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Label>\n  Hello Label\n</Label>"
+      ]
+    },
+    {
+      "name": "Lead",
+      "description": "A lead component",
+      "type": "Text",
+      "props": {
+        "is": "p",
+        "fontSize": 3,
+        "lineHeight": 1.25
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Lead>\n  Hello Lead\n</Lead>"
+      ]
+    },
+    {
+      "name": "Link",
+      "description": "A link component",
+      "type": "a",
+      "props": {
+        "color": "primary"
+      },
+      "style": {},
+      "system": [
+        "space"
+      ],
+      "examples": [
+        "<Link\n  href='#!'\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Measure",
+      "description": "A measure component",
+      "type": "Text",
+      "props": {
+        "maxWidth": "32em"
+      },
+      "style": {},
+      "system": [
+        "maxWidth"
+      ],
+      "examples": [
+        "<Measure>\n  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n</Measure>"
+      ]
+    },
+    {
+      "name": "Message",
+      "description": "A message component",
+      "type": "Flex",
+      "props": {
+        "px": 3,
+        "py": 2,
+        "fontWeight": "bold",
+        "color": "white",
+        "bg": "blue",
+        "align": "center",
+        "minHeight": "48px"
+      },
+      "style": {
+        "WebkitFontSmoothing": "antialiased"
+      },
+      "system": [
+        "minHeight"
+      ],
+      "examples": [
+        "<Message>\n  Hello\n</Message>"
+      ]
+    },
+    {
+      "name": "Modal",
+      "description": "A modal component",
+      "type": "Position",
+      "position": "fixed",
+      "props": {
+        "top": "50%",
+        "left": "50%",
+        "p": 3,
+        "bg": "white",
+        "borderRadius": 2,
+        "maxWidth": "100vw",
+        "maxHeight": "100vh"
+      },
+      "style": {
+        "boxShadow": "0 0 0 60vmax ${props.theme.colors.darken[2]}, 0 0 32px ${props.theme.colors.darken[1]}",
+        "overflow": "auto",
+        "transform": "translate(-50%, -50%)"
+      },
+      "system": [
+        "width",
+        "maxWidth",
+        "maxHeight"
+      ],
+      "examples": [
+        "<div>\n  <Button\n    onClick={e => props.toggle()}\n    children='Toggle Modal'\n  />\n  {props.flag && (\n    <div>\n      <Position\n        position=\"fixed\"\n        top={0}\n        right={0}\n        bottom={0}\n        left={0}\n        onClick={e => props.toggle()}\n      />\n      <Modal width={256}>\n        <Heading>Hello</Heading>\n      </Modal>\n    </div>\n  )}\n</div>"
+      ]
+    },
+    {
+      "name": "NavLink",
+      "description": "A navlink component",
+      "type": "a",
+      "props": {
+        "color": "inherit",
+        "bg": "transparent",
+        "fontSize": 1,
+        "fontWeight": "bold",
+        "p": 2
+      },
+      "style": {
+        "display": "inline-flex",
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "textDecoration": "none",
+        "whiteSpace": "nowrap",
+        "cursor": "pointer",
+        "&:disabled": {
+          "opacity": 0.25
+        }
+      },
+      "system": [
+        "width"
+      ],
+      "examples": [
+        "<NavLink\n  href='#!'\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Panel",
+      "description": "A panel component",
+      "type": "div",
+      "props": {
+        "bg": "white",
+        "borderRadius": 2,
+        "border": 1,
+        "borderColor": "gray"
+      },
+      "style": {
+        "overflow": "hidden"
+      },
+      "system": [
+        "space"
+      ],
+      "examples": [
+        "<Panel color='blue'>\n  <PanelHeader\n    color='white'\n    bg='blue'>\n    Hello\n  </PanelHeader>\n  <Box p={3}>\n    <Subhead>\n      Panel\n    </Subhead>\n  </Box>\n  <PanelFooter color='blue'>\n    Footer\n  </PanelFooter>\n</Panel>"
+      ]
+    },
+    {
+      "name": "PanelFooter",
+      "description": "A panelfooter component",
+      "type": "footer",
+      "props": {
+        "fontSize": 1,
+        "p": 2,
+        "bg": "white",
+        "borderTop": 1,
+        "borderColor": "gray"
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Panel color='blue'>\n  <Box p={3}>\n    <Subhead>\n      Panel\n    </Subhead>\n  </Box>\n  <PanelFooter color='blue'>\n    Footer\n  </PanelFooter>\n</Panel>"
+      ]
+    },
+    {
+      "name": "PanelHeader",
+      "description": "A panelheader component",
+      "type": "header",
+      "props": {
+        "fontSize": 2,
+        "p": 2,
+        "bg": "white",
+        "borderBottom": 1,
+        "borderColor": "gray"
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Panel color='blue'>\n  <PanelHeader\n    color='white'\n    bg='blue'>\n    Hello\n  </PanelHeader>\n  <Box p={3}>\n    <Subhead>\n      Panel\n    </Subhead>\n  </Box>\n</Panel>"
+      ]
+    },
+    {
+      "name": "Position",
+      "description": "A position component",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "system": [
+        "width",
+        "space",
+        "color",
+        "zIndex",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "position"
+      ],
+      "examples": [
+        "<Position\n  position='relative'\n/>"
+      ]
+    },
+    {
+      "name": "Pre",
+      "description": "A pre component",
+      "type": "pre",
+      "props": {
+        "fontSize": 1,
+        "fontFamily": "mono",
+        "m": 0
+      },
+      "style": {
+        "overflow": "auto"
+      },
+      "system": [
+        "fontFamily",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Pre\n  children=\"const hello = 'Rebass'\"\n/>"
+      ]
+    },
+    {
+      "name": "Progress",
+      "description": "A progress component",
+      "type": "progress",
+      "props": {
+        "width": 1,
+        "m": 0,
+        "px": 0,
+        "color": "blue",
+        "bg": "gray",
+        "borderRadius": 2
+      },
+      "style": {
+        "boxSizing": "border-box",
+        "diplay": "block",
+        "height": "4px",
+        "overflow": "hidden",
+        "appearance": "none",
+        "&::-webkit-progress-bar": {
+          "backgroundColor": "${props.theme.colors.gray}"
+        },
+        "&::-webkit-progress-value": {
+          "backgroundColor": "currentcolor"
+        },
+        "&::-moz-progress-bar": {
+          "backgroundColor": "currentcolor"
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Progress\n  value={1/3}\n/>"
+      ]
+    },
+    {
+      "name": "Radio",
+      "description": "A radio component",
+      "type": "input",
+      "props": {
+        "type": "radio",
+        "m": 0,
+        "mr": 2
+      },
+      "style": {},
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<div>\n  <Label>\n    <Radio\n      name='radio'\n      defaultChecked\n    />\n    Hello\n  </Label>\n  <Label>\n    <Radio name='radio' />\n    Beep\n  </Label>\n</div>"
+      ]
+    },
+    {
+      "name": "Root",
+      "description": "A root component",
+      "type": "div",
+      "props": {
+        "fontFamily": "sans"
+      },
+      "style": {
+        "& *": {
+          "boxSizing": "border-box"
+        }
+      },
+      "system": [
+        "fontFamily",
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Root/>"
+      ]
+    },
+    {
+      "name": "Row",
+      "description": "A row component",
+      "type": "Flex",
+      "props": {
+        "mx": -3
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Row>\n  <Column>Column</Column>\n  <Column>Column</Column>\n</Row>"
+      ]
+    },
+    {
+      "name": "Select",
+      "description": "A select component",
+      "type": "select",
+      "props": {
+        "m": 0,
+        "px": 1,
+        "py": 2,
+        "width": 1,
+        "border": 0,
+        "borderColor": "gray",
+        "boxShadow": 1,
+        "borderRadius": 2,
+        "color": "inherit",
+        "bg": "transparent"
+      },
+      "style": {
+        "fontFamily": "inherit",
+        "fontSize": "inherit",
+        "lineHeight": "inherit",
+        "appearance": "none",
+        "width": "100%",
+        "border": 0,
+        "backgroundImage": "url('${encodeURI(\"data:image/svg+xml,<svg xmlns='http://www.w3c.org/2000/svg' width='32' height='32' viewbox='0 0 32 32' fill='tomato'> <path d='M0 6 L32 6 L16 28 z' /> </svg>\")}')",
+        "backgroundSize": "8px 8px",
+        "&:disabled": {
+          "opacity": 0.25
+        },
+        "&:focus": {
+          "outline": "none",
+          "boxShadow": "inset 0 0 0 1px ${props.theme.colors.blue}"
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Select>\n  <option>Hello</option>\n  <option>Beep</option>\n  <option>Boop</option>\n</Select>"
+      ]
+    },
+    {
+      "name": "Slider",
+      "description": "A slider component",
+      "type": "input",
+      "props": {
+        "type": "range",
+        "width": 1,
+        "mx": 0,
+        "my": 2,
+        "color": "inherit",
+        "bg": "gray",
+        "borderRadius": 99999
+      },
+      "style": {
+        "display": "block",
+        "height": "4px",
+        "cursor": "pointer",
+        "appearance": "none",
+        "&::-webkit-slider-thumb": {
+          "width": "16px",
+          "height": "16px",
+          "backgroundColor": "currentcolor",
+          "border": 0,
+          "borderRadius": "99999px",
+          "appearance": "none"
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Slider />"
+      ]
+    },
+    {
+      "name": "Small",
+      "description": "A small component",
+      "type": "Text",
+      "props": {
+        "is": "small",
+        "fontSize": 0
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Small\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Subhead",
+      "description": "A subhead component",
+      "type": "Heading",
+      "props": {
+        "is": "h3",
+        "fontSize": 4
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Subhead\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Switch",
+      "description": "A switch component",
+      "type": "div",
+      "props": {
+        "role": "checkbox",
+        "color": "blue",
+        "borderRadius": "99999px"
+      },
+      "style": {
+        "display": "inline-flex",
+        "width": "40px",
+        "height": "24px",
+        "backgroundColor": "${props.checked ? props.theme.colors[props.color] : 'transparent'}",
+        "boxShadow": "inset 0 0 0 2px",
+        "transitionProperty": "background-color",
+        "transitionDuration": ".2s",
+        "transitionTimingFunction": "ease-out",
+        "userSelect": "none",
+        "&::after": {
+          "content": "' '",
+          "width": "16px",
+          "height": "16px",
+          "margin": "4px",
+          "borderRadius": "99999px",
+          "transitionProperty": "transform, color",
+          "transitionDuration": ".1s",
+          "transitionTimingFunction": "ease-out",
+          "transform": "${(props.checked) ? 'translateX(16px)' : 'translateX(0)'}",
+          "backgroundColor": "${props.checked ? props.theme.colors.white : props.theme.colors[props.color]}"
+        }
+      },
+      "system": [
+        "space",
+        "color"
+      ],
+      "examples": [
+        "<Switch\n  checked={props.flag}\n  onClick={e => props.toggle()}\n/>"
+      ]
+    },
+    {
+      "name": "Tab",
+      "description": "A tab component",
+      "type": "a",
+      "props": {
+        "fontSize": 1,
+        "fontWeight": "bold",
+        "mr": 3,
+        "py": 2,
+        "color": "inherit",
+        "borderBottom": 2,
+        "borderColor": "transparent",
+        "hover": {
+          "color": "blue"
+        }
+      },
+      "style": {
+        "textDecoration": "none"
+      },
+      "system": [],
+      "examples": [
+        "<Tab borderColor='blue'>\n  Hello\n</Tab>"
+      ]
+    },
+    {
+      "name": "Tabs",
+      "description": "A tabs component",
+      "type": "Flex",
+      "props": {
+        "borderBottom": 1,
+        "borderColor": "gray"
+      },
+      "style": {},
+      "system": [],
+      "examples": [
+        "<Tabs>\n  <Tab borderColor='blue'>\n    Beep\n  </Tab>\n  <Tab>\n    Boop\n  </Tab>\n  <Tab>\n    Bop\n  </Tab>\n</Tabs>"
+      ]
+    },
+    {
+      "name": "Text",
+      "description": "A text component",
+      "type": "div",
+      "props": {
+        "m": 0
+      },
+      "style": {},
+      "system": [
+        "space",
+        "color",
+        "fontSize",
+        "fontWeight",
+        "textAlign",
+        "lineHeight"
+      ],
+      "examples": [
+        "<Text\n  textAlign='center'\n  fontWeight='bold'\n  children='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Textarea",
+      "description": "A textarea component",
+      "type": "textarea",
+      "props": {
+        "px": 1,
+        "py": 2,
+        "m": 0,
+        "width": 1,
+        "fontSize": "inherit",
+        "color": "inherit",
+        "bg": "transparent",
+        "border": 0,
+        "borderColor": "gray",
+        "boxShadow": 1,
+        "borderRadius": 2
+      },
+      "style": {
+        "fontFamily": "inherit",
+        "appearance": "none",
+        "&:focus": {
+          "outline": "none",
+          "boxShadow": "${'inset 0 0 0 1px' + props.theme.colors.blue}"
+        },
+        "&:disabled": {
+          "opacity": 0.25
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Textarea\n  rows={4}\n  defaultValue='Hello'\n/>"
+      ]
+    },
+    {
+      "name": "Toolbar",
+      "description": "A toolbar component",
+      "type": "Flex",
+      "props": {
+        "px": 2,
+        "color": "white",
+        "bg": "dark",
+        "align": "center",
+        "minHeight": "48px"
+      },
+      "style": {
+        "WebkitFontSmoothing": "antialiased"
+      },
+      "system": [
+        "minHeight"
+      ],
+      "examples": [
+        "<Toolbar>\n  <NavLink>\n    Hello\n  </NavLink>\n  <NavLink ml='auto'>\n    Beep\n  </NavLink>\n  <NavLink>\n    Boop\n  </NavLink>\n</Toolbar>"
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "description": "A tooltip component",
+      "type": "div",
+      "props": {
+        "color": "white",
+        "bg": "dark"
+      },
+      "style": {
+        "display": "inline-block",
+        "position": "relative",
+        "color": "inherit",
+        "backgroundColor": "transparent",
+        "&::before": {
+          "display": "none",
+          "content": "'${props.text}'",
+          "position": "absolute",
+          "bottom": "100%",
+          "left": "50%",
+          "transform": "translate(-50%, -4px)",
+          "whiteSpace": "nowrap",
+          "fontSize": "${props.theme.fontSizes[0]}pt",
+          "paddingTop": "4px",
+          "paddingBottom": "4px",
+          "paddingLeft": "8px",
+          "paddingRight": "8px",
+          "color": "${props.theme.colors[props.color]}",
+          "backgroundColor": "${props.theme.colors[props.bg]}",
+          "borderRadius": "${props.theme.radii[1] + 'px'}"
+        },
+        "&::after": {
+          "display": "none",
+          "position": "absolute",
+          "bottom": "100%",
+          "left": "50%",
+          "transform": "translate(-50%, 8px)",
+          "content": " ",
+          "borderWidth": "6px",
+          "borderStyle": "solid",
+          "borderColor": "transparent",
+          "borderTopColor": "${props.theme.colors[props.bg]}"
+        },
+        "&:hover": {
+          "&::before, &::after": {
+            "display": "block"
+          }
+        }
+      },
+      "system": [],
+      "examples": [
+        "<Tooltip text='Hello'>\n  <Text>\n    Hover Me\n  </Text>\n</Tooltip>"
+      ]
+    },
+    {
+      "name": "Truncate",
+      "description": "A truncate component",
+      "type": "Text",
+      "props": {},
+      "style": {
+        "overflow": "hidden",
+        "whiteSpace": "nowrap",
+        "textOverflow": "ellipsis"
+      },
+      "system": [],
+      "examples": [
+        "<Truncate>\n  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n</Truncate>"
+      ]
+    }
+  ]
+}

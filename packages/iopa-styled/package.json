@@ -1,0 +1,28 @@
+{
+  "name": "iopa-styled",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": ["dist", "scripts", "bin"],
+  "author": "Internet of Protocols Association (iopa.io)",
+  "license": "Apache 2.0",
+  "bin": {
+    "iopa-styled": "./bin/iopa-styled.js"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "styled-components": "3.2.0",
+    "styled-system": "2.1.2",
+    "system-components": "2.0.2"
+  },
+  "devDependencies": {
+  },
+  "resolutions": {
+    "styled-components": "3.2.0",
+    "styled-system": "2.1.2"
+  }
+}

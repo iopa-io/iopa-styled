@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+     "start": "cd packages/theme-rebass-ts && node bin/fuse-box-react-scripts.js start"
+  },
+  "author": "Internet of Protocols Association (iopa.io)",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.40",
+    "@babel/standalone": "^7.0.0-beta.40",
+    "chroma-js": "^1.3.6",
+    "fs-extra": "^5.0.0",
+    "fuse-box-react-scripts": "3.0.78",
+    "fuse-box-react-scripts-ts": "3.0.78",
+    "stringify-object": "^3.2.2",
+    "typescript": "^2.7.2",
+    "babel-runtime": "^6.26.0",
+    "styled-system": "^2.2.1",
+    "prop-types": "15.6.1",
+    "axe-prop-types": "1.0.5"
+  },
+  "resolutions": {
+    "styled-components": "3.2.0",
+    "styled-system": "2.1.2",
+    "prop-types": "15.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iopa/iopa-styled.git"
+  }
+}

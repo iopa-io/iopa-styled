@@ -1,0 +1,14 @@
+{
+  "name": "styled-system-types",
+  "version": "1.0.0",
+  "description": "",
+  "typings": "dist/styled-system/index.d.ts",
+  "author": "Internet of Protocols Association (iopa.io)",
+  "scripts": {
+    "build": "node build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+  },
+  "license": "Apache 2.0"
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "inlineSourceMap": false,
+    "rootDir": "build",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist",
+    "sourceMap": false,
+    "inlineSources": false
+  },
+  "include": [
+    "build/**/*"
+  ]
+}

@@ -5,6 +5,8 @@ This mono repository contains the following packages
    - `styled-system-types` typescript definitions for [`styled-system`](https://github.com/jxnblk/styled-system)
    - `theme-rebass-ts` the rebass theme with optimized iopa-styled authoring, typescript support and blazing fast configuration-free build with typescript support using `fuse-box-react-scripts-ts`
 
+These utilities are for ease of authoring only and add no run-time code whatsoever;  they do assume you will use [`styled-system`](https://github.com/jxnblk/styled-system) and [`styled-components`](https://github.com/styled-components/styled-components) or `glamorous` etc.
+
 ### Installation
 
 ```bash

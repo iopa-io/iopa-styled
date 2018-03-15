@@ -47,7 +47,7 @@ cp ../mydocfolder/theme.json ./packages/theme-rebass-ts/src/lib/theme.json
 npm run theme:import
 ```
 
-Imported files are in `packages/theme-rebass-ts/src/elements` folder;  run `theme:dist` to build distribution version
+Imported files are in [`packages/theme-rebass-ts/src/elements`](https://github.com/iopa-io/iopa-styled/tree/master/packages/theme-rebass-ts/src/elements) folder;  run `theme:dist` to build distribution version
 
 
 ## Inspiration

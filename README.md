@@ -11,6 +11,37 @@ This mono repository contains the following packages
 lerna bootstrap
 ```
 
+### Usage
+
+See the `theme:*` in package.json and the `theme-rebass-ts` package in this repository for an example of how to use the `iopa-styled` utilities.  Essentially every component is defined in a very straight forward way, and the scripts convert this format into lab open format for use in other authorings, and in transpiled typescript to javascript for use in react applications such as the `/docs` folder of `theme-rebass-ts`
+
+
+```js
+exports.default = {
+  name: "Avatar",
+  description: "An avatar component",
+  type: "img",
+  props: {
+    size: 48,
+    borderRadius: "99999px"
+  },
+  style: {
+    display: "inline-block"
+  },
+  system: [
+    "space",
+    "color",
+    "size"
+  ],
+  examples: [
+`<Avatar
+  size={64}
+  src='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'
+/>`
+]
+}
+``
+
 
 ### Rebuilding `styled-system-types`
 

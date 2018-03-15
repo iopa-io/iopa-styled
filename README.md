@@ -93,8 +93,7 @@ The reason for writing it was to standardize themes such as `rebass` for ease of
 
 Apache 2.0
 
-The Rebass theme is reproduced as close as possible to the original theme under its open source license and was converted by hand/with some automation to a standard [`system-components`](https://github.com/jxnblk/styled-system/tree/master/system-components) / [lab open format]
-(https://compositor.io/blog/open-formats/).  
+The Rebass theme is reproduced as close as possible to the original theme under its open source license and was converted by hand/with some automation to a standard [`system-components`](https://github.com/jxnblk/styled-system/tree/master/system-components) / [lab open format](https://compositor.io/blog/open-formats/).  
 
 The IOPA styled definition is based on the compositor open source format, but with some non-breaking version fields added.
 

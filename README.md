@@ -85,7 +85,7 @@ Imported files are in [`packages/theme-rebass-ts/src/elements`](https://github.c
 
 ## Inspiration
 
-This work builds heavily on the [`styled-system`](https://github.com/jxnblk/styled-system) and [`system-components`](https://github.com/jxnblk/styled-system/tree/master/system-components) approach to using [`styled-components`](https://github.com/styled-components/styled-components), `glamorous` and other css-in-js libraries.  In fact its little more than an implementation of the [open source compsitor lab format](https://compositor.io/blog/open-formats/) with an end to end open source authoring experience.
+This work builds heavily on the [`styled-system`](https://github.com/jxnblk/styled-system) and [`system-components`](https://github.com/jxnblk/styled-system/tree/master/system-components) approach to using [`styled-components`](https://github.com/styled-components/styled-components), `glamorous` and other css-in-js libraries.  In fact its little more than an implementation of the [open source compositor lab format](https://compositor.io/blog/open-formats/) with an end to end open source authoring experience that uses typescript and allows multi-file authoring in JS which is a little easier than a massive JSON file.
 
 The reason for writing it was to standardize themes such as `rebass` for ease of importing and exporting into third party authoring tools such as lab, but providing an open source alternative, and to support TypeScript or Flow (purely for static type authoring experience).  It replaces the need for packages such as `dxs` as `lab-cli` as while both worked well, they had some limitations / quirks in our use case and did not support theme examples fully
 

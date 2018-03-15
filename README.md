@@ -15,7 +15,7 @@ lerna bootstrap
 
 ### Usage
 
-See the `theme:*` in package.json and the `theme-rebass-ts` package in this repository for an example of how to use the `iopa-styled` utilities.  Essentially every component is defined in a very straight forward way, and the scripts convert this format into lab open format for use in other authorings, and in transpiled typescript to javascript for use in react applications such as the `/docs` folder of `theme-rebass-ts`
+See the `theme:*` in package.json and the `theme-rebass-ts` package in this repository for an example of how to use the `iopa-styled` utilities.  Essentially every component is defined in the very straight forward way below, and the scripts convert this format into iopa-compositor (lab) open format for use in other authoring tools, and in transpiled typescript to javascript for use in react applications such as the `/docs` folder of `theme-rebass-ts`
 
 
 ```js

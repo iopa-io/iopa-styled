@@ -102,6 +102,6 @@ The typescript defintions for styled-system are created systematically from the 
 
 ## Roadmap
 
-Add support for `glamorous` and other alternatives to `styled-components`.
-Add support for composite and stateful components (only covers pure styled components)
-Add additional themes based on [AtlasKit](https://bitbucket.org/atlassian/atlaskit-mk-2) and other `styled-components`-based themes
+- Add support for `glamorous` and other alternatives to `styled-components`.
+- Add support for composite and stateful components (only covers pure styled components)
+- Add additional themes based on [AtlasKit](https://bitbucket.org/atlassian/atlaskit-mk-2) and other `styled-components`-based themes

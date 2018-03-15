@@ -42,7 +42,7 @@ exports.default = {
 />`
 ]
 }
-``
+```
 
 
 ### Rebuilding `styled-system-types`

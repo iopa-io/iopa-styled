@@ -2,15 +2,11 @@ import * as React from 'react';
 import * as logo from './logo.svg';
 
 import styled, { ThemeProvider, keyframes } from 'styled-components';
-import parseStyles from './iopa-dxs/parseLibrary';
-import parseExamples from './iopa-dxs/parseExamples';
-import parseMeta from './iopa-dxs/parseMeta';
+import {parseLibrary as parseStyles, parseExamples, parseMeta} from 'iopa-styled';
 
 import * as theme from '../lib/theme.json';
 // import * as styles from '../lib/styles.json';
 import styles from '../'; 
-
-// import { fontFamily, space, width, fontSize, color } from 'styled-system'
 import system from 'system-components'
 
 import { Flex, Box } from 'grid-styled';

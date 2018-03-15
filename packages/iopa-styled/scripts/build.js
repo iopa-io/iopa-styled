@@ -1,14 +1,17 @@
-const fs = require('fs-extra')
-const path = require('path')
-const config = require('./src/lib/styles.json')
-pretty = require('stringify-object');
+const fs = require('fs-extra'),
+ path = require('path'),
+pretty = require('stringify-object'),
+ cwd = require('process').cwd();
 
-fs.emptyDirSync(path.join(__dirname, 'build'));
-var template = (component) => `/// <reference path="../@types/styled-system/index.d.ts" />
+var config = require(path.resolve(cwd, 'src/lib/styles.json'));
 
+fs.emptyDirSync(path.join(cwd, 'build'));
+// /// <reference path="../node_modules/styled-system-types/dist/styled-system/index.d.ts" />
+
+var template = (component) => `
 import system from 'system-components';
 import { StyledComponentClass } from 'styled-components';
-${(component.typeProps.length > 0) ? `import { ${component.typeProps.join(', ')} } from 'styled-system';` : ''}
+${(component.typeProps.length > 0) ? `import { ${component.typeProps.join(', ')} } from 'styled-system-types';` : ''}
 ${`${/^[A-Z]/.test(component.type) ? `import { ${component.type} } from './'
 ` : ""}
 export interface ${component.name}Props
@@ -103,7 +106,7 @@ indexts = `export  { Flex, Box } from 'grid-styled';\n`;
 
 config.components.forEach((component) => {
 
-  const filename = path.join(__dirname, 'build', component.name + '.ts');
+  const filename = path.join(cwd, 'build', component.name + '.ts');
   getPropTypeKeys(component);
   component.props = Object.assign({ is: "$$TYPE$$" }, component.props);
   component.style = createFunctionalStyle(component.style, 2);
@@ -113,5 +116,5 @@ config.components.forEach((component) => {
 }
 )
 
-fs.writeFileSync(path.resolve(__dirname, 'build', 'index.ts'), indexts, {encoding: 'utf8'});
+fs.writeFileSync(path.resolve(cwd, 'build', 'index.ts'), indexts, {encoding: 'utf8'});
 

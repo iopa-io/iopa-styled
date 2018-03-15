@@ -7,8 +7,6 @@
     "jsx": "react",
     "importHelpers": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "declaration": true,
-    "declarationDir": "dist"
+    "experimentalDecorators": true
   }
 }

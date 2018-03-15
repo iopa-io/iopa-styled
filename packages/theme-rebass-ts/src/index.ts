@@ -1,5 +1,5 @@
 export default {
-  name: "rebass-json",
+  name: "theme-rebass-ts",
   version: "2.0.0-0",
   library: "styled-components",
   librarytype: "iopa-compositor",

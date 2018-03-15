@@ -3,12 +3,13 @@ const path = require('path'),
  fs = require('fs-extra'),
 util = require('util'),
 pretty = require('stringify-object');
+const cwd = require('process').cwd();
 
-var package = require('./package.json');
+var package = require(path.resolve(cwd, "package.json"));
 
-fs.emptyDirSync(path.resolve(__dirname, "src/elements"));
+fs.emptyDirSync(path.resolve(cwd, "src/elements"));
 
-var components = require('./src/lib/styles.json').components;
+var components = require(path.resolve(cwd, './src/lib/styles.json')).components;
 
 Object.keys(components).forEach((key) => {
     var component = components[key];
@@ -34,6 +35,6 @@ Object.keys(components).forEach((key) => {
 })}
     `
 
-    fs.writeFileSync(path.resolve(__dirname, "src/elements", component.name + ".ts"), template);
+    fs.writeFileSync(path.resolve(cwd, "src/elements", component.name + ".ts"), template);
     
 });

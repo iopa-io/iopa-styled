@@ -2,12 +2,13 @@
 const path = require('path'),
 fs = require('fs-extra'),
 util = require('util');
+const cwd = require('process').cwd();
 
-var package = require('./package.json');
+var package = require(path.resolve(cwd, "package.json"));
 
 let matchExp = /examples: \[([\s\S]*)\]/
 
-fs.readdir(path.resolve(__dirname, "src/elements"), function (err, items) {
+fs.readdir(path.resolve(cwd, "src/elements"), function (err, items) {
 
     let result = [];
     let index = [];
@@ -18,9 +19,9 @@ fs.readdir(path.resolve(__dirname, "src/elements"), function (err, items) {
 
         let name = path.basename(key, ".ts");
 
-        let obj = require(path.resolve(__dirname, "src/elements", key )).default;
+        let obj = require(path.resolve(cwd, "src/elements", key )).default;
 
-       /* let filetext = fs.readFileSync(path.resolve(__dirname, "src/elements", key ), {encoding: 'utf8'});
+       /* let filetext = fs.readFileSync(path.resolve(cwd, "src/elements", key ), {encoding: 'utf8'});
 
         let jsx = /examples: \[([\s\S]*)\]/
         .exec(filetext)[1]
@@ -51,7 +52,7 @@ fs.readdir(path.resolve(__dirname, "src/elements"), function (err, items) {
 
     });
 
-    fs.emptyDirSync(path.resolve(__dirname, "src/lib"))
+    fs.emptyDirSync(path.resolve(cwd, "src/lib"))
 
     result = {
         "name": package.name,
@@ -71,10 +72,10 @@ fs.readdir(path.resolve(__dirname, "src/elements"), function (err, items) {
   components: [
 ` + index.join(',\n')+ "\n  ]\n}"
 
-    fs.writeFileSync(path.resolve(__dirname, "src/lib/styles.json"), JSON.stringify(result, null, 2));
-    fs.writeFileSync(path.resolve(__dirname, "src/index.ts"), "export default " + index);
+    fs.writeFileSync(path.resolve(cwd, "src/lib/styles.json"), JSON.stringify(result, null, 2));
+    fs.writeFileSync(path.resolve(cwd, "src/index.ts"), "export default " + index);
 
-    var theme = require('./src/theme/theme.js').default;
-    fs.writeFileSync(path.resolve(__dirname, "src/lib/theme.json"), JSON.stringify(theme, null, 2));
+    var theme = require(path.resolve(cwd,'./src/theme/theme.js')).default;
+    fs.writeFileSync(path.resolve(cwd, "src/lib/theme.json"), JSON.stringify(theme, null, 2));
 
 });

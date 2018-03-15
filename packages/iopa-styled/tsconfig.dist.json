@@ -2,14 +2,14 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "inlineSourceMap": false,
-    "rootDir": "build",
+    "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist",
     "sourceMap": false,
-    "inlineSources": false
+    "inlineSources": false,
+    "declarationDir": "dist"
   },
   "include": [
-    "build/**/*"
+    "src/**/*"
   ]
 }
